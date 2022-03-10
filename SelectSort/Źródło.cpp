@@ -20,17 +20,18 @@ void SelectSort(int n, int a[]) {
 		cout << a[x] << endl;
 	}
 }
+
 void InsertSort(int n, int a[]) {
-	int pom{}, l{n};
-	for (int k{ n }; k > 1;k--) {
-		for (int j{ l - 1 };j < n;j++) {
+	int pom{}, j = n-1;
+	for (int k{}; k < n;k++) {
+		for (int l=j+1;l < j;l++) {
 			if (a[j] > a[l]) {
 				pom = a[l];
 				a[l] = a[j];
-				a[j] = a[l];
+				a[j] = pom;
 			}
 		}
-		l--;
+		j--;
 	}	
 	cout << "Po sortowaniu\n";
 	for (int x = 0;x < n;x++) {
