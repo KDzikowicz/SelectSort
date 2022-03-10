@@ -21,10 +21,21 @@ void SelectSort(int n, int a[]) {
 	}
 }
 void InsertSort(int n, int a[]) {
-	int pom{}, j{}, l{};
-
-
-
+	int pom{}, l{n};
+	for (int k{ n }; k > 1;k--) {
+		for (int j{ l - 1 };j < n;j++) {
+			if (a[j] > a[l]) {
+				pom = a[l];
+				a[l] = a[j];
+				a[j] = a[l];
+			}
+		}
+		l--;
+	}	
+	cout << "Po sortowaniu\n";
+	for (int x = 0;x < n;x++) {
+		cout << a[x] << endl;
+	}
 }
 int main() {
 	srand(time(NULL));
@@ -34,6 +45,7 @@ int main() {
 		cout << tab[i] << endl;
 	}
 	int n_tab = sizeof(tab) / sizeof(int);
-	SelectSort(n_tab, tab);
+	//SelectSort(n_tab, tab);
+	InsertSort(n_tab, tab);
 	return 0;
 }
