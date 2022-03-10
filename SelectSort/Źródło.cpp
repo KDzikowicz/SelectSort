@@ -22,16 +22,15 @@ void SelectSort(int n, int a[]) {
 }
 
 void InsertSort(int n, int a[]) {
-	int pom{}, j = n-1;
-	for (int k{}; k < n;k++) {
-		for (int l=j+1;l < j;l++) {
-			if (a[j] > a[l]) {
-				pom = a[l];
-				a[l] = a[j];
-				a[j] = pom;
+	int liczba = a[n - 1];
+	for (int i = n - 2;i >= 0;i--) {
+		liczba = a[i];
+		for (int j = i + 1; j < n; j++) {
+			if (liczba > a[j]) {
+				a[j - 1] = a[j];
+				a[j] = liczba;
 			}
 		}
-		j--;
 	}	
 	cout << "Po sortowaniu\n";
 	for (int x = 0;x < n;x++) {
